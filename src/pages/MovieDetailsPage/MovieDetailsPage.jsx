@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams, useLocation, Link, Outlet } from 'react-router-dom';
 import { getMovieDetails } from '../../services/api';
+import { MdImageNotSupported } from "react-icons/md";
+import { FaArrowLeft } from "react-icons/fa6";
 import css from './MovieDetailsPage.module.css';
 
 const MovieDetailsPage = () => {
@@ -9,7 +11,8 @@ const MovieDetailsPage = () => {
     const location = useLocation();
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    const backLinkHref = location.state ?? '/movies';
+
+     const backLinkHref = location.state?.from || '/movies';
 
     useEffect(() => {
         async function fetchMovieDetails() {
@@ -27,27 +30,28 @@ const MovieDetailsPage = () => {
     }, [movieId]);
 
     if (!movie) {
-        return <p>Loading ...</p>;
+        return <p>No movie details available.</p>;
     }
 
     const { title, poster_path, overview, genres, release_date } = movie;
 
-    const poster = poster_path
-        ? `https://image.tmdb.org/t/p/w500${poster_path}`
-        : 'https://via.placeholder.com/300x450?text=No+Image';
-
     return (
         <div className={css.movieDetailsContainer}>
-            <Link className={css.goBack}>Go Back</Link>
-            {loading && <p>Loading movie details...</p>}
+            <Link to={backLinkHref} className={css.goBack}>Go Back <FaArrowLeft /> </Link>
+            {loading && <p>Loading movie details ...</p>}
             {error && <p>Oops! Something went wrong: {error}</p>}
 
             <div className={css.movieDetailsDiv}>
-                <img src={poster} alt={title} />
+                {poster_path ? (
+                    <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={title} className={css.moviePoster} />
+                ) : (
+                    <MdImageNotSupported size={100} className={css.noPosterIcon} />
+                )}
+
                 <div className={css.movieInfoDiv}>
                     <h2>{title} ({release_date?.slice(0, 4)})</h2>
                     <p><b>Overview:</b> {overview}</p>
-                    {genres && (
+                    {genres?.length > 0 && (
                         <p>
                             <b>Genres:</b> {genres.map(genre => genre.name).join(', ')}
                         </p>

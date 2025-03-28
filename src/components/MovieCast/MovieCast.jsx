@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieCast } from '../../services/api';
+import { FaUser } from "react-icons/fa";
 import css from './MovieCast.module.css';
 
 const MovieCast = () => {
@@ -45,7 +46,7 @@ const MovieCast = () => {
                             ?
                             (<img src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`} alt={actor.name} />)
                             :
-                            (<img src="https://via.placeholder.com/150" alt="No image available"></img>)}
+                            <FaUser size={50} className={css.noImageIcon} title="No image available" />}
                         <p>{actor.name}</p>
                         <p>Character: {actor.character}</p>
                     </li>

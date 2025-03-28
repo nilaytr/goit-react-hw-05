@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import css from './Navigation.module.css';
+import { SiThemoviedatabase } from "react-icons/si";
 
 const navLinkClass = ({ isActive }) => {
     return isActive ? css.active : css.link;
