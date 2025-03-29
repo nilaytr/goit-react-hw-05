@@ -1,0 +1,19 @@
+.notFound {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    color: darkred;
+    font-size: 36px;
+}
+
+.goBack {
+    display: flex;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    left: 0;
+    position: absolute;
+}

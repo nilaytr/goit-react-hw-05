@@ -1,0 +1,16 @@
+.castList {
+    position: absolute;
+    left: 0;
+    text-align: left;
+    margin-top: 150px;
+    padding-bottom: 20px;
+}
+
+.castPhoto {
+    width: 170px;
+    height: 250px;
+}
+
+.castItem {
+    padding-bottom: 40px;
+}

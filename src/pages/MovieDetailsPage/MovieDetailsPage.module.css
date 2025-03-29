@@ -1,0 +1,48 @@
+.movieDetailsContainer {
+    position: absolute;
+    left: 0;
+    margin-right: 300px;
+}
+
+.goBack {
+    display: flex;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+.movieDetailsDiv {
+    display: flex;
+    left: 0;
+    gap: 20px;
+}
+
+.moviePoster {
+    width: 400px;
+    height: 450px;
+}
+
+.movieInfoDiv{
+    text-align: left;
+    margin-left: 15px;
+}
+
+.additionalDiv {
+    position: absolute;
+    left: 0;
+    margin-right: 300px;
+}
+
+.additionalHeader {
+    margin-left: 35px;
+    font-size: 18px;
+}
+
+.additionalLink {
+    position: absolute;
+    display: flex;
+    left: 0;
+    margin-left: 40px;
+    text-align: left;
+}

@@ -8,12 +8,12 @@ const navLinkClass = ({ isActive }) => {
 
 const Navigation = () => {
     return (
-        <header>
-            <nav>
-                <NavLink to="/" className={navLinkClass}>Home</NavLink>
-                <NavLink to="/movies" className={navLinkClass}>Movies</NavLink>
-            </nav>
-        </header>
+          <nav className={css.navigation}>
+            <NavLink to="/" className={navLinkClass}>
+                <SiThemoviedatabase className={css.icon} size="40" /> Home
+            </NavLink>
+            <NavLink to="/movies" className={navLinkClass}>Movies</NavLink>
+        </nav>
     );
 };
 

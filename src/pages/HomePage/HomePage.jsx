@@ -27,7 +27,7 @@ const HomePage = () => {
 
     return (
         <div className={css.homePageDiv}>
-            <h1 className={css.homeTitle}>Trending Today <FaArrowTrendUp /> <MdMovie /> </h1>
+            <h1 className={css.homeTitle}>Trending Today <FaArrowTrendUp /> <MdMovie size= "40" /> </h1>
             {loading && <p>Loading ...</p>}
             {error && <p>Oops! Something went wrong : {error}</p>}
             {movies.length > 0 && <MovieList movies={movies} />}

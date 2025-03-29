@@ -1,0 +1,13 @@
+.homePageDiv {
+    position: absolute;
+    left: 0;
+    margin-right: 300px;
+}
+
+.homeTitle {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    margin-left: 35px;
+}

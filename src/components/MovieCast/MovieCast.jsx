@@ -44,9 +44,9 @@ const MovieCast = () => {
                     <li key={actor.id} className={css.castItem}>
                         {actor.profile_path
                             ?
-                            (<img src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`} alt={actor.name} />)
+                            (<img src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`} alt={actor.name} className={css.castPhoto} />)
                             :
-                            <FaUser size={50} className={css.noImageIcon} title="No image available" />}
+                            <FaUser size={170} className={css.noImageIcon} title="No image available" />}
                         <p>{actor.name}</p>
                         <p>Character: {actor.character}</p>
                     </li>

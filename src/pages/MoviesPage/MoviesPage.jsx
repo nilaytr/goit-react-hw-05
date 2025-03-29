@@ -39,7 +39,7 @@ const MoviesPage = () => {
         <div className={css.moviesPageDiv}>
             <form onSubmit={handleSubmit}>
                 <input type="text" name="query" placeholder="Search movies..." />
-                <button type="submit">Search</button>
+                <button className={css.searchBtn} type="submit">Search</button>
             </form>
             {loading && <p>Loading ...</p>}
             {error && <p>No movies found for your search : {error}</p>}

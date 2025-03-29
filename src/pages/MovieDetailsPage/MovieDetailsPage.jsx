@@ -37,7 +37,7 @@ const MovieDetailsPage = () => {
 
     return (
         <div className={css.movieDetailsContainer}>
-            <Link to={backLinkHref} className={css.goBack}>Go Back <FaArrowLeft /> </Link>
+            <Link to={backLinkHref} className={css.goBack}> <FaArrowLeft size="24" /> {' '} Go Back </Link>
             {loading && <p>Loading movie details ...</p>}
             {error && <p>Oops! Something went wrong: {error}</p>}
 
@@ -45,7 +45,7 @@ const MovieDetailsPage = () => {
                 {poster_path ? (
                     <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={title} className={css.moviePoster} />
                 ) : (
-                    <MdImageNotSupported size={100} className={css.noPosterIcon} />
+                    <MdImageNotSupported size = "300" className={css.noPosterIcon} />
                 )}
 
                 <div className={css.movieInfoDiv}>
@@ -60,13 +60,13 @@ const MovieDetailsPage = () => {
             </div>
 
             <div className={css.additionalDiv}>
-                <h3>Additional information</h3>
+                <h3 className={css.additionalHeader}>Additional information</h3>
                 <ul>
                     <li>
-                        <Link to="cast" state={{ from: backLinkHref }}>Cast</Link>
+                        <Link to="cast" className={css.additionalLink} state={{ from: backLinkHref }}>Cast</Link>
                     </li>
                     <li>
-                        <Link to="reviews" state={{ from: backLinkHref }}>Reviews</Link>
+                        <Link to="reviews" className={css.additionalLink} state={{ from: backLinkHref }}>Reviews</Link>
                     </li>
                 </ul>
             </div>
